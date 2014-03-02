@@ -36,39 +36,71 @@
     Place *pla=nil;
     Date *dat=nil;
     if (action!=nil) {
-        act = [NSEntityDescription insertNewObjectForEntityForName:@"Action" inManagedObjectContext:_managedObjectContext];
-        act.content = action;
+        if ((act=[self checkContentInDataModel:@"Action" content:action])) {
+        }else{
+            act = [NSEntityDescription insertNewObjectForEntityForName:@"Action" inManagedObjectContext:_managedObjectContext];
+            act.content = action;
+        }
         if (person!=nil) {
-            per = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:_managedObjectContext];
-            per.content = person;
+            if ((per=[self checkContentInDataModel:@"Person" content:person])) {
+            }else{
+                per = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:_managedObjectContext];
+                per.content = person;
+            }
             [per addBelongsToActionsObject:act];
             if (place!=nil) {
-                pla = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:_managedObjectContext];
-                pla.content = place;
+                if ((pla=[self checkContentInDataModel:@"Place" content:place])) {
+                }else{
+                    pla = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:_managedObjectContext];
+                    pla.content = place;
+                }
                 [pla addBelongsToPersons:[NSSet setWithObject:per]];
                 if (date!=nil) {
-                    dat = [NSEntityDescription insertNewObjectForEntityForName:@"Date" inManagedObjectContext:_managedObjectContext];
-                    dat.content = date;
+                    if ((dat=[self checkContentInDataModel:@"Date" content:date])) {
+                    }else{
+                        dat = [NSEntityDescription insertNewObjectForEntityForName:@"Date" inManagedObjectContext:_managedObjectContext];
+                        dat.content = date;
+                    }
                     [dat addBelongsToPlace:[NSSet setWithObject:pla]];
+                }else{
+                    [pla addBelongsToPlacesObject:pla];
                 }
             }else if(date!=nil){
-                dat = [NSEntityDescription insertNewObjectForEntityForName:@"Date" inManagedObjectContext:_managedObjectContext];
-                dat.content = date;
+                if ((dat=[self checkContentInDataModel:@"Date" content:date])) {
+                }else{
+                    dat = [NSEntityDescription insertNewObjectForEntityForName:@"Date" inManagedObjectContext:_managedObjectContext];
+                    dat.content = date;
+                }
                 [dat addBelongsToPersons:[NSSet setWithObject:per]];
+            }else{
+                [per addBelongsToPersonsObject:per];
             }
         }else if(place!=nil){
-            pla = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:_managedObjectContext];
-            pla.content = place;
+            if ((pla=[self checkContentInDataModel:@"Place" content:place])) {
+            }else{
+                pla = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:_managedObjectContext];
+                pla.content = place;
+            }
             [pla addBelongsToActions:[NSSet setWithObject:act]];
             if (date!=nil) {
-                dat = [NSEntityDescription insertNewObjectForEntityForName:@"Date" inManagedObjectContext:_managedObjectContext];
-                dat.content = date;
+                if ((dat=[self checkContentInDataModel:@"Date" content:date])) {
+                }else{
+                    dat = [NSEntityDescription insertNewObjectForEntityForName:@"Date" inManagedObjectContext:_managedObjectContext];
+                    dat.content = date;
+                }
                 [dat addBelongsToPlace:[NSSet setWithObject:pla]];
+            }else{
+                [pla addBelongsToPlacesObject:pla];
             }
         }else if(date!=nil){
-            dat = [NSEntityDescription insertNewObjectForEntityForName:@"Date" inManagedObjectContext:_managedObjectContext];
-            dat.content = date;
+            if ((dat=[self checkContentInDataModel:@"Date" content:date])) {
+            }else{
+                dat = [NSEntityDescription insertNewObjectForEntityForName:@"Date" inManagedObjectContext:_managedObjectContext];
+                dat.content = date;
+            }
             [dat addBelongsToActions:[NSSet setWithObject:act]];
+        }else{
+            [act addBelongsToActionsObject:act];
         }
     }
     NSError *savingError = nil;

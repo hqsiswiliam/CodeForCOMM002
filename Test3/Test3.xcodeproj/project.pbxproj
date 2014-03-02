@@ -22,11 +22,11 @@
 		4D26AA3518BD4DD6002973B0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D26AA1918BD4DD5002973B0 /* CoreData.framework */; };
 		4D26AA3D18BD4DD6002973B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D26AA3B18BD4DD6002973B0 /* InfoPlist.strings */; };
 		4D26AA3F18BD4DD6002973B0 /* Test3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26AA3E18BD4DD6002973B0 /* Test3Tests.m */; };
-		4D26AA4B18BD4FB4002973B0 /* Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26AA4A18BD4FB4002973B0 /* Date.m */; };
-		4D26AA4E18BD4FB4002973B0 /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26AA4D18BD4FB4002973B0 /* Action.m */; };
-		4D26AA5118BD4FB4002973B0 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26AA5018BD4FB4002973B0 /* Person.m */; };
-		4D26AA5418BD4FB4002973B0 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26AA5318BD4FB4002973B0 /* Place.m */; };
 		4D26AA5818BD4FEE002973B0 /* OperationOnDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26AA5718BD4FEE002973B0 /* OperationOnDataBase.m */; };
+		4D8B679118C2E07A006CC687 /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B679018C2E07A006CC687 /* Action.m */; };
+		4D8B679418C2E07B006CC687 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B679318C2E07B006CC687 /* Person.m */; };
+		4D8B679718C2E07B006CC687 /* Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B679618C2E07B006CC687 /* Date.m */; };
+		4D8B679A18C2E07B006CC687 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B679918C2E07B006CC687 /* Place.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,16 +58,16 @@
 		4D26AA3A18BD4DD6002973B0 /* Test3Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test3Tests-Info.plist"; sourceTree = "<group>"; };
 		4D26AA3C18BD4DD6002973B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4D26AA3E18BD4DD6002973B0 /* Test3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test3Tests.m; sourceTree = "<group>"; };
-		4D26AA4918BD4FB4002973B0 /* Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
-		4D26AA4A18BD4FB4002973B0 /* Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Date.m; sourceTree = "<group>"; };
-		4D26AA4C18BD4FB4002973B0 /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
-		4D26AA4D18BD4FB4002973B0 /* Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Action.m; sourceTree = "<group>"; };
-		4D26AA4F18BD4FB4002973B0 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		4D26AA5018BD4FB4002973B0 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		4D26AA5218BD4FB4002973B0 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
-		4D26AA5318BD4FB4002973B0 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		4D26AA5618BD4FEE002973B0 /* OperationOnDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationOnDataBase.h; sourceTree = "<group>"; };
 		4D26AA5718BD4FEE002973B0 /* OperationOnDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationOnDataBase.m; sourceTree = "<group>"; };
+		4D8B678F18C2E07A006CC687 /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
+		4D8B679018C2E07A006CC687 /* Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Action.m; sourceTree = "<group>"; };
+		4D8B679218C2E07B006CC687 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		4D8B679318C2E07B006CC687 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		4D8B679518C2E07B006CC687 /* Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
+		4D8B679618C2E07B006CC687 /* Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Date.m; sourceTree = "<group>"; };
+		4D8B679818C2E07B006CC687 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		4D8B679918C2E07B006CC687 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,14 +173,14 @@
 		4D26AA4818BD4FA3002973B0 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				4D26AA5218BD4FB4002973B0 /* Place.h */,
-				4D26AA5318BD4FB4002973B0 /* Place.m */,
-				4D26AA4F18BD4FB4002973B0 /* Person.h */,
-				4D26AA5018BD4FB4002973B0 /* Person.m */,
-				4D26AA4C18BD4FB4002973B0 /* Action.h */,
-				4D26AA4D18BD4FB4002973B0 /* Action.m */,
-				4D26AA4918BD4FB4002973B0 /* Date.h */,
-				4D26AA4A18BD4FB4002973B0 /* Date.m */,
+				4D8B679818C2E07B006CC687 /* Place.h */,
+				4D8B679918C2E07B006CC687 /* Place.m */,
+				4D8B679518C2E07B006CC687 /* Date.h */,
+				4D8B679618C2E07B006CC687 /* Date.m */,
+				4D8B679218C2E07B006CC687 /* Person.h */,
+				4D8B679318C2E07B006CC687 /* Person.m */,
+				4D8B678F18C2E07A006CC687 /* Action.h */,
+				4D8B679018C2E07A006CC687 /* Action.m */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -289,14 +289,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D26AA5118BD4FB4002973B0 /* Person.m in Sources */,
+				4D8B679418C2E07B006CC687 /* Person.m in Sources */,
+				4D8B679718C2E07B006CC687 /* Date.m in Sources */,
 				4D26AA2918BD4DD5002973B0 /* Test3.xcdatamodeld in Sources */,
-				4D26AA5418BD4FB4002973B0 /* Place.m in Sources */,
 				4D26AA5818BD4FEE002973B0 /* OperationOnDataBase.m in Sources */,
+				4D8B679118C2E07A006CC687 /* Action.m in Sources */,
 				4D26AA2618BD4DD5002973B0 /* AppDelegate.m in Sources */,
-				4D26AA4E18BD4FB4002973B0 /* Action.m in Sources */,
 				4D26AA2218BD4DD5002973B0 /* main.m in Sources */,
-				4D26AA4B18BD4FB4002973B0 /* Date.m in Sources */,
+				4D8B679A18C2E07B006CC687 /* Place.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +497,7 @@
 				4D26AA4418BD4DD6002973B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D26AA4518BD4DD6002973B0 /* Build configuration list for PBXNativeTarget "Test3Tests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +506,7 @@
 				4D26AA4718BD4DD6002973B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
