@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Action" representedClassName="Action" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toDate" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Date" inverseName="fromAction" inverseEntity="Date" syncable="YES"/>
+        <relationship name="toPerson" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Person" inverseName="fromAction" inverseEntity="Person" syncable="YES"/>
+        <relationship name="toPlace" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Place" inverseName="fromAction" inverseEntity="Place" syncable="YES"/>
+    </entity>
+    <entity name="Date" representedClassName="Date" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fromAction" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Action" inverseName="toDate" inverseEntity="Action" syncable="YES"/>
+        <relationship name="fromPerson" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Person" inverseName="toDate" inverseEntity="Person" syncable="YES"/>
+        <relationship name="fromPlace" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Place" inverseName="toDate" inverseEntity="Place" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fromAction" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Action" inverseName="toPerson" inverseEntity="Action" syncable="YES"/>
+        <relationship name="toDate" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Date" inverseName="fromPerson" inverseEntity="Date" syncable="YES"/>
+        <relationship name="toPlace" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Place" syncable="YES"/>
+    </entity>
+    <entity name="Place" representedClassName="Place" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fromAction" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Action" inverseName="toPlace" inverseEntity="Action" syncable="YES"/>
+        <relationship name="fromPerson" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Person" syncable="YES"/>
+        <relationship name="toDate" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Date" inverseName="fromPlace" inverseEntity="Date" syncable="YES"/>
+    </entity>
+    <entity name="Sentence" representedClassName="Sentence" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Action" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Date" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Person" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Place" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Sentence" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
