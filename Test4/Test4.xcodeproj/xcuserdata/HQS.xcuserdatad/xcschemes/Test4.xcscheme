@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4D26AA0F18BD4DD5002973B0"
-               BuildableName = "Test3.app"
-               BlueprintName = "Test3"
-               ReferencedContainer = "container:Test3.xcodeproj">
+               BlueprintIdentifier = "4DD20C4218C740B400761069"
+               BuildableName = "Test4.app"
+               BlueprintName = "Test4"
+               ReferencedContainer = "container:Test4.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4D26AA2F18BD4DD6002973B0"
-               BuildableName = "Test3Tests.xctest"
-               BlueprintName = "Test3Tests"
-               ReferencedContainer = "container:Test3.xcodeproj">
+               BlueprintIdentifier = "4DD20C6218C740B500761069"
+               BuildableName = "Test4Tests.xctest"
+               BlueprintName = "Test4Tests"
+               ReferencedContainer = "container:Test4.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4D26AA0F18BD4DD5002973B0"
-            BuildableName = "Test3.app"
-            BlueprintName = "Test3"
-            ReferencedContainer = "container:Test3.xcodeproj">
+            BlueprintIdentifier = "4DD20C4218C740B400761069"
+            BuildableName = "Test4.app"
+            BlueprintName = "Test4"
+            ReferencedContainer = "container:Test4.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,18 +61,12 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4D26AA0F18BD4DD5002973B0"
-            BuildableName = "Test3.app"
-            BlueprintName = "Test3"
-            ReferencedContainer = "container:Test3.xcodeproj">
+            BlueprintIdentifier = "4DD20C4218C740B400761069"
+            BuildableName = "Test4.app"
+            BlueprintName = "Test4"
+            ReferencedContainer = "container:Test4.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-com.apple.CoreData.SQLDebug 1"
-            isEnabled = "NO">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -85,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4D26AA0F18BD4DD5002973B0"
-            BuildableName = "Test3.app"
-            BlueprintName = "Test3"
-            ReferencedContainer = "container:Test3.xcodeproj">
+            BlueprintIdentifier = "4DD20C4218C740B400761069"
+            BuildableName = "Test4.app"
+            BlueprintName = "Test4"
+            ReferencedContainer = "container:Test4.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,13 +1,13 @@
 //
 //  AppDelegate.m
-//  Test3
+//  Test4
 //
-//  Created by H QS on 14-2-25.
+//  Created by H QS on 14-3-5.
 //  Copyright (c) 2014年 H QS. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "OperationOnDataBase.h"
+#import "DataOperation.h"
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -21,27 +21,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     _managedObjectContext = [self managedObjectContext];
-    OperationOnDataBase *opDB = [[OperationOnDataBase alloc]initWithManagedObjectContext:_managedObjectContext];
-//    [opDB saveDataToDB:@"Return the book" Person:@"Qiushi" Place:@"Library" Date:@"26th Dec"];
-//    [opDB saveDataToDB:@"Return the book" Person:nil Place:@"DDD" Date:@"26th Dec"];
-//    [opDB saveDataToDB:@"Return the book" Person:@"Willam" Place:nil Date:@"26th Dec"];
-//    [opDB saveDataToDB:@"Return the book" Person:@"William" Place:@"Library" Date:nil];
-//    [opDB saveDataToDB:@"Return the book" Person:nil Place:nil Date:@"26th Dec"];
-//    [opDB saveDataToDB:@"Return the book" Person:nil Place:@"Library" Date:nil];
-//    [opDB saveDataToDB:@"FUW" Person:@"ZX" Place:nil Date:nil];
-//    [opDB saveDataToDB:@"Return the book" Person:nil Place:nil Date:nil];
-    [opDB saveDataToDB:@"sdf" Person:nil Place:nil Date:nil];
-
-//    [opDB deleteAllData];
-//    [opDB checkContentInDataModel:@"Person" content:@"Qiushi"];
-//    [opDB deletePersonsWithString:@"Willam"];
-//    [opDB deleteDatesWithString:@"26th Dec"];
-    NSArray *array = [opDB retrieveAllQueryAsSentencesArray];
-    NSLog(@"Data Size=%d", [array count]);
-    for (NSString *a in array) {
-        NSLog(@"\n%@",a);
-    }
-//    NSLog(@"%@",a.content);
+    DataOperation *opDB = [[DataOperation alloc]initWithManagedObjectContext:_managedObjectContext];
+    [opDB saveDataToDB:@"Return" Thing:nil Person:nil Place:nil Date:nil];
+//    [opDB retrieveAllQueryAsSentencesArray];
     return YES;
 }
 
@@ -112,7 +94,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Test3" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Test4" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -125,7 +107,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Test3.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Test4.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];

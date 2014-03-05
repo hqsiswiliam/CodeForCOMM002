@@ -36,8 +36,11 @@
     Place *pla=nil;
     Date *dat=nil;
     if (action!=nil) {
-        act = [NSEntityDescription insertNewObjectForEntityForName:@"Action" inManagedObjectContext:_managedObjectContext];
-        act.content = action;
+        if ((act = [self checkContentInDataModel:@"Action" content:action])!=nil) {
+        }else{
+            act = [NSEntityDescription insertNewObjectForEntityForName:@"Action" inManagedObjectContext:_managedObjectContext];
+            act.content = action;
+        }
         if (person!=nil) {
             per = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:_managedObjectContext];
             per.content = person;
@@ -56,16 +59,18 @@
                 dat.content = date;
                 [dat addBelongsToPersons:[NSSet setWithObject:per]];
             }
-        }else if(place!=nil){
+        }
+        else if(place!=nil){
             pla = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:_managedObjectContext];
             pla.content = place;
-            [pla addBelongsToActions:[NSSet setWithObject:act]];
+            [pla addBelongsToActionsObject:act];
             if (date!=nil) {
                 dat = [NSEntityDescription insertNewObjectForEntityForName:@"Date" inManagedObjectContext:_managedObjectContext];
                 dat.content = date;
                 [dat addBelongsToPlace:[NSSet setWithObject:pla]];
             }
-        }else if(date!=nil){
+        }
+        else if(date!=nil){
             dat = [NSEntityDescription insertNewObjectForEntityForName:@"Date" inManagedObjectContext:_managedObjectContext];
             dat.content = date;
             [dat addBelongsToActions:[NSSet setWithObject:act]];
@@ -115,7 +120,8 @@
                     [allQueries addObject:sentence];
                 }
             }
-        }else if([[act hasManyPlaces]count]!=0){
+        }
+        if([[act hasManyPlaces]count]!=0){
             for (Place* pla in [act hasManyPlaces]) {
                 if ([[pla hasManyDates]count]!=0) {
                     for (Date* dat in [pla hasManyDates]) {
@@ -127,7 +133,8 @@
                     [allQueries addObject:sentence];
                 }
             }
-        }else if([[act hasManyDates]count]!=0){
+        }
+        if([[act hasManyDates]count]!=0){
             for (Date* dat in [act hasManyDates]) {
                 sentence = [NSString stringWithFormat:@"%@ on %@", act.content, dat.content];
                 [allQueries addObject:sentence];
@@ -257,5 +264,22 @@
         NSLog(@"Content found!");
     }
     return ((id)result[0]);
+}
+
+-(Action* )checkContentInActionModel: (NSString*)content{
+    NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:@"Action"];
+    NSPredicate *predict = [NSPredicate predicateWithFormat:@"content == %@",content];
+    [request setPredicate:predict];
+    [request setFetchLimit:1];
+    NSError *requestError = nil;
+    NSArray *result = [_managedObjectContext executeFetchRequest:request error:&requestError];
+    if ([result count]<1) {
+        NSLog(@"No content matched in Action");
+        return nil;
+    }else{
+        NSLog(@"Content found!");
+    }
+    NSLog(@"NUMBER=%d",[result count]);
+    return ((Action*)result[0]);
 }
 @end

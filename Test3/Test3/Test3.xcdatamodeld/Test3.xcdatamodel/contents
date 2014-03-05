@@ -2,6 +2,8 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Action" representedClassName="Action" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongsToActions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Action" inverseName="hasManyActions" inverseEntity="Action" syncable="YES"/>
+        <relationship name="hasManyActions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Action" inverseName="belongsToActions" inverseEntity="Action" syncable="YES"/>
         <relationship name="hasManyDates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Date" inverseName="belongsToActions" inverseEntity="Date" syncable="YES"/>
         <relationship name="hasManyPersons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="belongsToActions" inverseEntity="Person" syncable="YES"/>
         <relationship name="hasManyPlaces" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Place" inverseName="belongsToActions" inverseEntity="Place" syncable="YES"/>
@@ -25,9 +27,9 @@
         <relationship name="hasManyDates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Date" inverseName="belongsToPlace" inverseEntity="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Action" positionX="-495" positionY="-184" width="128" height="103"/>
+        <element name="Action" positionX="-495" positionY="-184" width="128" height="133"/>
+        <element name="Date" positionX="-333" positionY="36" width="128" height="103"/>
         <element name="Person" positionX="-155" positionY="-180" width="128" height="103"/>
         <element name="Place" positionX="-722" positionY="36" width="128" height="103"/>
-        <element name="Date" positionX="-333" positionY="36" width="128" height="103"/>
     </elements>
 </model>
