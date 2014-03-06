@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DisplayViewController : UIViewController
-
+@interface DisplayViewController : UIViewController<UITableViewDataSource>
+@property (nonatomic, retain)UITableView *myTableView;
+-(id)initWithNSArray:(NSArray *)array;
 @end

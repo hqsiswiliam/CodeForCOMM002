@@ -1,14 +1,13 @@
 //
 //  AppDelegate.m
-//  Test4.1
+//  Test5
 //
-//  Created by H QS on 14-3-5.
+//  Created by H QS on 14-3-6.
 //  Copyright (c) 2014年 H QS. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "DataOperation.h"
-#import "DisplayViewController.h"
+
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -21,18 +20,6 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    _managedObjectContext = [self managedObjectContext];
-    DataOperation *opDB = [[DataOperation alloc]initWithManagedObjectContext:_managedObjectContext];
-    [opDB saveDataToDB:@"Return" Thing:nil Person:nil Place:nil Date:nil];
-    [opDB saveDataToDB:@"Return" Thing:@"the book" Person:nil Place:nil Date:nil];
-    [opDB saveDataToDB:@"Give" Thing:nil Person:@"Qiushi Huang" Place:nil Date:nil];
-    [opDB saveDataToDB:@"Return" Thing:nil Person:nil Place:@"Guildford" Date:nil];
-    [opDB saveDataToDB:@"Play" Thing:@"games" Person:nil Place:@"Guildford" Date:@"20th March"];
-    [opDB saveDataToDB:@"Return" Thing:nil Person:nil Place:@"Guildford" Date:nil];
-    [opDB saveDataToDB:@"Order" Thing:@"a meal" Person:@"Chiris" Place:@"London" Date:@"10th April"];
-    [opDB saveDataToDB:@"Go for" Thing:@"a meal" Person:@"Chiris" Place:@"London" Date:@"10th April"];
-    DisplayViewController *controller= [[DisplayViewController alloc]initWithNSArray:[opDB retrieveAllQueryAsSentencesArray]];
-    self.window.rootViewController = controller;
     return YES;
 }
 
@@ -103,7 +90,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Test4_1" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Test5" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -116,7 +103,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Test4_1.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Test5.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
