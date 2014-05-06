@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Element" representedClassName="Element" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="row_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Latitude" representedClassName="Latitude" parentEntity="Element" syncable="YES"/>
+    <entity name="Longtitude" representedClassName="Longtitude" parentEntity="Element" syncable="YES"/>
+    <entity name="MiddleTable" representedClassName="MiddleTable" syncable="YES">
+        <attribute name="idOfLatitude" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idOfLongtitude" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idOfMyDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idOfPerson" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idOfPlace" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idOfThing" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idOfVerb" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="row_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="MyDate" representedClassName="MyDate" parentEntity="Element" syncable="YES"/>
+    <entity name="Person" representedClassName="Person" parentEntity="Element" syncable="YES"/>
+    <entity name="Place" representedClassName="Place" parentEntity="Element" syncable="YES"/>
+    <entity name="Thing" representedClassName="Thing" parentEntity="Element" syncable="YES"/>
+    <entity name="Verb" representedClassName="Verb" parentEntity="Element" syncable="YES"/>
+    <elements>
+        <element name="Element" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="MiddleTable" positionX="349" positionY="90" width="128" height="163"/>
+        <element name="MyDate" positionX="142" positionY="432" width="128" height="45"/>
+        <element name="Person" positionX="-9" positionY="468" width="128" height="45"/>
+        <element name="Place" positionX="-81" positionY="324" width="128" height="45"/>
+        <element name="Thing" positionX="-108" positionY="225" width="128" height="45"/>
+        <element name="Verb" positionX="27" positionY="81" width="128" height="45"/>
+        <element name="Latitude" positionX="250" positionY="353" width="128" height="43"/>
+        <element name="Longtitude" positionX="187" positionY="90" width="128" height="43"/>
+    </elements>
+</model>

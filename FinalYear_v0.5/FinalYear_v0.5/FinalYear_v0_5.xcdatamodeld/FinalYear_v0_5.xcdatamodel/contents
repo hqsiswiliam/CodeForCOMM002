@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Element" representedClassName="Element" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="row_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="MiddleTable" representedClassName="MiddleTable" syncable="YES">
+        <attribute name="idOfMyDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idOfPerson" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idOfPlace" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idOfThing" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idOfVerb" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="row_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="MyDate" representedClassName="MyDate" parentEntity="Element" syncable="YES"/>
+    <entity name="Person" representedClassName="Person" parentEntity="Element" syncable="YES"/>
+    <entity name="Place" representedClassName="Place" parentEntity="Element" syncable="YES"/>
+    <entity name="Sentence" representedClassName="Sentence" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Thing" representedClassName="Thing" parentEntity="Element" syncable="YES"/>
+    <entity name="Verb" representedClassName="Verb" parentEntity="Element" syncable="YES"/>
+    <elements>
+        <element name="Sentence" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Element" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MiddleTable" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MyDate" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Person" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Place" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Thing" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Verb" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

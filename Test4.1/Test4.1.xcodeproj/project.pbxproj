@@ -529,6 +529,7 @@
 				4D82C9F618C7676800FABAC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D82C9F718C7676800FABAC8 /* Build configuration list for PBXNativeTarget "Test4.1Tests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +538,7 @@
 				4D82C9F918C7676800FABAC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

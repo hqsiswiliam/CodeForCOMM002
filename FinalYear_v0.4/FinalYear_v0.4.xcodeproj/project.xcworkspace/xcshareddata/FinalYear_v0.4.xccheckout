@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D0A3093C-2D5B-4D8A-8D3F-094A7E739656</string>
+	<string>81194197-5B07-49B9-B95C-1E341B9D496C</string>
 	<key>IDESourceControlProjectName</key>
 	<string>FinalYear_v0.4</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>EC0D6FBB-D32F-48D2-8BD4-389597901099</key>
-		<string>https://github.com/hqsiswiliam/XCode.git</string>
+		<key>BAE4D176-33A3-4C5F-9551-417557309856</key>
+		<string>https://github.com/hqsiswiliam/CodeForCOMM002.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Final Year Project/FinalYear_v0.4/FinalYear_v0.4.xcodeproj/project.xcworkspace</string>
+	<string>FinalYear_v0.4/FinalYear_v0.4.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>EC0D6FBB-D32F-48D2-8BD4-389597901099</key>
-		<string>../../../..</string>
+		<key>BAE4D176-33A3-4C5F-9551-417557309856</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/hqsiswiliam/XCode.git</string>
+	<string>https://github.com/hqsiswiliam/CodeForCOMM002.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>EC0D6FBB-D32F-48D2-8BD4-389597901099</string>
+	<string>BAE4D176-33A3-4C5F-9551-417557309856</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>EC0D6FBB-D32F-48D2-8BD4-389597901099</string>
+			<string>BAE4D176-33A3-4C5F-9551-417557309856</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Xcode_Project</string>
+			<string>CodeForCOMM002</string>
 		</dict>
 	</array>
 </dict>

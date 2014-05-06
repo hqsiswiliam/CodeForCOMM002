@@ -22,6 +22,7 @@
 		4D9A7B3118C8936500110140 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9A7B1518C8936500110140 /* CoreData.framework */; };
 		4D9A7B3918C8936500110140 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D9A7B3718C8936500110140 /* InfoPlist.strings */; };
 		4D9A7B3B18C8936500110140 /* Test5Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A7B3A18C8936500110140 /* Test5Tests.m */; };
+		4DBFA1A518C89D9100E171CD /* UserInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DBFA1A418C89D9100E171CD /* UserInputController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		4D9A7B3618C8936500110140 /* Test5Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test5Tests-Info.plist"; sourceTree = "<group>"; };
 		4D9A7B3818C8936500110140 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4D9A7B3A18C8936500110140 /* Test5Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test5Tests.m; sourceTree = "<group>"; };
+		4DBFA1A318C89D9100E171CD /* UserInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInputController.h; sourceTree = "<group>"; };
+		4DBFA1A418C89D9100E171CD /* UserInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInputController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,7 @@
 		4D9A7B1718C8936500110140 /* Test5 */ = {
 			isa = PBXGroup;
 			children = (
+				4DBFA1A618C89D9700E171CD /* ScreenController */,
 				4D9A7B2018C8936500110140 /* AppDelegate.h */,
 				4D9A7B2118C8936500110140 /* AppDelegate.m */,
 				4D9A7B2618C8936500110140 /* Images.xcassets */,
@@ -151,6 +155,15 @@
 				4D9A7B3718C8936500110140 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4DBFA1A618C89D9700E171CD /* ScreenController */ = {
+			isa = PBXGroup;
+			children = (
+				4DBFA1A318C89D9100E171CD /* UserInputController.h */,
+				4DBFA1A418C89D9100E171CD /* UserInputController.m */,
+			);
+			name = ScreenController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +264,7 @@
 				4D9A7B2218C8936500110140 /* AppDelegate.m in Sources */,
 				4D9A7B2518C8936500110140 /* Test5.xcdatamodeld in Sources */,
 				4D9A7B1E18C8936500110140 /* main.m in Sources */,
+				4DBFA1A518C89D9100E171CD /* UserInputController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +465,7 @@
 				4D9A7B4018C8936500110140 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D9A7B4118C8936500110140 /* Build configuration list for PBXNativeTarget "Test5Tests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +474,7 @@
 				4D9A7B4318C8936500110140 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

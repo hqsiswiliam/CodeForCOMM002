@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>EB3E4A09-A204-4A19-BA76-944096138312</string>
+	<string>9398F934-4E5F-473E-A7D5-F44E9D8C0E36</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Test4</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>EE8C0C42-2ADA-4660-B1F8-11E4FB09E323</key>
+		<key>BAE4D176-33A3-4C5F-9551-417557309856</key>
 		<string>https://github.com/hqsiswiliam/CodeForCOMM002.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Test4/Test4.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>EE8C0C42-2ADA-4660-B1F8-11E4FB09E323</key>
+		<key>BAE4D176-33A3-4C5F-9551-417557309856</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,16 +25,16 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>EE8C0C42-2ADA-4660-B1F8-11E4FB09E323</string>
+	<string>BAE4D176-33A3-4C5F-9551-417557309856</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>EE8C0C42-2ADA-4660-B1F8-11E4FB09E323</string>
+			<string>BAE4D176-33A3-4C5F-9551-417557309856</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Final Year Project</string>
+			<string>CodeForCOMM002</string>
 		</dict>
 	</array>
 </dict>

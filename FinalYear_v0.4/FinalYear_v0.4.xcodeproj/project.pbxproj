@@ -517,6 +517,7 @@
 				4DC7AAAC18BCC15B00C5D283 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DC7AAAD18BCC15B00C5D283 /* Build configuration list for PBXNativeTarget "FinalYear_v0.4Tests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +526,7 @@
 				4DC7AAAF18BCC15B00C5D283 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -15,6 +15,7 @@ static NSString *TableViewCellIdentifier = @"MyCells";
 @implementation DisplayViewController{
     NSArray *_dataArray;
 }
+@synthesize <#property#>
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

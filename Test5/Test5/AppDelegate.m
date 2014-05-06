@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "UserInputController.h"
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -20,6 +20,8 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    UserInputController *inputController = [[UserInputController alloc]initWithNibName:nil bundle:nil];
+    self.window.rootViewController = inputController;
     return YES;
 }
 
