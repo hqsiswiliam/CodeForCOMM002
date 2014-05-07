@@ -247,9 +247,9 @@
 			children = (
 				4DAE579018E4576D00B566D9 /* DisplayMessageViewController.h */,
 				4DAE579218E4576D00B566D9 /* DisplayMessageViewController.m */,
+				4DAE579118E4576D00B566D9 /* DisplayMessageViewController.xib */,
 				4DEEA98818F3073100017CB5 /* DetailedDisplayController.h */,
 				4DEEA98918F3073100017CB5 /* DetailedDisplayController.m */,
-				4DAE579118E4576D00B566D9 /* DisplayMessageViewController.xib */,
 				4DEEA98A18F3073100017CB5 /* DetailedDisplayController.xib */,
 			);
 			name = DisplayView;

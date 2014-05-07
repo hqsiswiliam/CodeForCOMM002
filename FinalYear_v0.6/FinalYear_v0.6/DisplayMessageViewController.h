@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DisplayMessageViewController : UIViewController<UITableViewDelegate, NSFetchedResultsControllerDelegate, UITableViewDataSource>
-@property(nonatomic, strong) IBOutlet UITableView *displayDataView;
-@property(nonatomic, strong)NSFetchedResultsController *fetchedResultsController;
-@property(nonatomic, strong)NSManagedObjectContext *managedObjectContext;
+@interface DisplayMessageViewController : UIViewController<UITableViewDelegate, NSFetchedResultsControllerDelegate, UITableViewDataSource,UISearchBarDelegate>
+@property(nonatomic, strong) UITableView *displayDataView;
+@property(nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property(nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property(nonatomic, strong) UISearchBar *search_bar;
+@property(nonatomic, strong) UISearchDisplayController *search_controller;
 @end

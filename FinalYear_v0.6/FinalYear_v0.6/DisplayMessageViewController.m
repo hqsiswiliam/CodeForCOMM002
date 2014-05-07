@@ -20,7 +20,7 @@ static NSString* myCell = @"myCell";
 @end
 
 @implementation DisplayMessageViewController
-@synthesize displayDataView;
+@synthesize displayDataView,search_bar,search_controller;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,12 +35,13 @@ static NSString* myCell = @"myCell";
 - (void)viewDidAppear:(BOOL)animated{
     [self fetchWholeSentence];
     [self createTableView];
-
+    [self createSearchBar];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,13 +51,23 @@ static NSString* myCell = @"myCell";
 }
 
 -(void)createTableView{
-//    self.displayDataView = [[UITableView alloc]initWithFrame:CGRectMake(0, 88, self.view.bounds.size.width, self.view.bounds.size.height-88) style:UITableViewStylePlain];
+    [self.search_bar setFrame:CGRectZero];
+    [self.view updateConstraints];
+    self.displayDataView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height-64) style:UITableViewStylePlain];
 //    self.displayDataView = [[UITableView alloc]init];
     self.displayDataView.dataSource = self;
     self.displayDataView.delegate = self;
     [self.displayDataView registerClass:[UITableViewCell class] forCellReuseIdentifier:myCell];
     [self.view addSubview:self.displayDataView];
+    
 }
+
+-(void)createSearchBar{
+    search_bar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
+    [self.view addSubview:search_bar];
+    search_controller = [[UISearchDisplayController alloc]initWithSearchBar:search_bar contentsController:self];
+}
+
 
 -(void)fetchWholeSentence{
     //assign appdelegate's MOC to the class's MOC
@@ -158,4 +169,6 @@ static NSString* myCell = @"myCell";
     }
     
 }
+
+
 @end
