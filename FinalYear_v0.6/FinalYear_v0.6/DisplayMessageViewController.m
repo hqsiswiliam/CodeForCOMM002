@@ -15,7 +15,7 @@ static NSString* myCell = @"myCell";
 @interface DisplayMessageViewController (){
     DataOperation *_dataOperation;
     RetrieveForDisplay* _retrieveForDisplay;
-//    NSArray *_arrayForDisplay;
+    RetrieveForDisplay* _filteredResults;
 }
 @end
 
@@ -28,20 +28,29 @@ static NSString* myCell = @"myCell";
         self.title = @"Display Message";
         self.tabBarItem.image = [UIImage imageNamed:@"DisplayMessageICON"];
         _retrieveForDisplay = [[RetrieveForDisplay alloc]init];
+        //add a search button on the right
+        UIBarButtonItem *search = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(showSearchBar)];
+        self.navigationItem.rightBarButtonItem = search;
     }
     return self;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    [self fetchWholeSentence];
-    [self createTableView];
-    [self createSearchBar];
+    [self hideSearchBar];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [self hideSearchBar];
+    [super viewDidDisappear:animated];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    [self fetchWholeSentence];
+    [self createTableView];
+    [self createSearchBar];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,7 +62,7 @@ static NSString* myCell = @"myCell";
 -(void)createTableView{
     [self.search_bar setFrame:CGRectZero];
     [self.view updateConstraints];
-    self.displayDataView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height-64) style:UITableViewStylePlain];
+    self.displayDataView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-0) style:UITableViewStylePlain];
 //    self.displayDataView = [[UITableView alloc]init];
     self.displayDataView.dataSource = self;
     self.displayDataView.delegate = self;
@@ -63,9 +72,21 @@ static NSString* myCell = @"myCell";
 }
 
 -(void)createSearchBar{
+    //in case of crash
+    _filteredResults = [[RetrieveForDisplay alloc]init];
+    _filteredResults.sentences = [NSMutableArray arrayWithCapacity:2];
+    //start to build search bar
     search_bar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
     [self.view addSubview:search_bar];
     search_controller = [[UISearchDisplayController alloc]initWithSearchBar:search_bar contentsController:self];
+    search_bar.hidden = YES;
+    //set delegate
+    search_bar.delegate = self;
+    search_controller.delegate = self;
+    search_controller.searchResultsDataSource = self;
+    search_controller.searchResultsTableView.delegate = self;
+    //register table cell for search display
+    [search_controller.searchResultsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Search"];
 }
 
 
@@ -102,6 +123,9 @@ static NSString* myCell = @"myCell";
     if ([tableView isEqual:self.displayDataView]) {
         cell = [tableView dequeueReusableCellWithIdentifier:myCell forIndexPath:indexPath];
         cell.textLabel.text = _retrieveForDisplay.sentences[indexPath.row];
+    }else if ([tableView isEqual:search_controller.searchResultsTableView]) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Search" forIndexPath:indexPath];
+        cell.textLabel.text = _filteredResults.sentences[indexPath.row];
     }
     return cell;
 }
@@ -118,12 +142,24 @@ static NSString* myCell = @"myCell";
                 break;
         }
     }
+    if ([tableView isEqual:search_controller.searchResultsTableView]) {
+        switch (section) {
+            case 0:
+                number = [_filteredResults.sentences count];
+                break;
+                
+            default:
+                break;
+        }
+    }
     return number;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if ([tableView isEqual:self.displayDataView]) {
         return [_retrieveForDisplay.sentences count];
+    }else if([tableView isEqual:search_controller.searchResultsTableView]){
+        return [_filteredResults.sentences count];
     }
     return 0;
 }
@@ -157,17 +193,73 @@ static NSString* myCell = @"myCell";
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section==0) {
+    if ([tableView isEqual:self.displayDataView]) {
+        if (indexPath.section==0) {
+            DetailedDisplayController *detailed_con = [[DetailedDisplayController alloc]init];
+            detailed_con.sentence = _retrieveForDisplay.sentences[indexPath.row];
+            detailed_con.person = _retrieveForDisplay.persons[indexPath.row];
+            detailed_con.place = _retrieveForDisplay.places[indexPath.row];
+            detailed_con.myDate = _retrieveForDisplay.myDates[indexPath.row];
+            detailed_con.latitude = _retrieveForDisplay.latitudes[indexPath.row];
+            detailed_con.longtitude = _retrieveForDisplay.longtitudes[indexPath.row];
+            [self.navigationController pushViewController:detailed_con animated:YES];
+        }
+    }else if([tableView isEqual:search_controller.searchResultsTableView]){
         DetailedDisplayController *detailed_con = [[DetailedDisplayController alloc]init];
-        detailed_con.sentence = _retrieveForDisplay.sentences[indexPath.row];
-        detailed_con.person = _retrieveForDisplay.persons[indexPath.row];
-        detailed_con.place = _retrieveForDisplay.places[indexPath.row];
-        detailed_con.myDate = _retrieveForDisplay.myDates[indexPath.row];
-        detailed_con.latitude = _retrieveForDisplay.latitudes[indexPath.row];
-        detailed_con.longtitude = _retrieveForDisplay.longtitudes[indexPath.row];
+        NSString* sentenceInFil = _filteredResults.sentences[indexPath.row];
+        NSInteger indexIn_retrieveForDisplay = [_retrieveForDisplay.sentences indexOfObject:sentenceInFil];
+        detailed_con.sentence = _retrieveForDisplay.sentences[indexIn_retrieveForDisplay];
+        detailed_con.person = _retrieveForDisplay.persons[indexIn_retrieveForDisplay];
+        detailed_con.place = _retrieveForDisplay.places[indexIn_retrieveForDisplay];
+        detailed_con.myDate = _retrieveForDisplay.myDates[indexIn_retrieveForDisplay];
+        detailed_con.latitude = _retrieveForDisplay.latitudes[indexIn_retrieveForDisplay];
+        detailed_con.longtitude = _retrieveForDisplay.longtitudes[indexIn_retrieveForDisplay];
+        
         [self.navigationController pushViewController:detailed_con animated:YES];
+        
     }
     
+    
+}
+
+#pragma for search button
+-(void)showSearchBar{
+    search_bar.hidden = NO;
+    [self.displayDataView setFrame:CGRectMake(0, search_bar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height-search_bar.frame.size.height)];
+    [search_bar becomeFirstResponder];
+}
+-(void)hideSearchBar{
+    [search_controller setActive:NO];
+    search_bar.hidden = YES;
+    [search_bar resignFirstResponder];
+    [self.displayDataView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    
+}
+#pragma handle search bar delegates
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    search_bar.hidden = YES;
+    [self.displayDataView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+}
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+}
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
+    _filteredResults.sentences = [NSMutableArray arrayWithArray:[_retrieveForDisplay.sentences filteredArrayUsingPredicate:resultPredicate]];
+    
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
+    [self filterContentForSearchText:searchString
+                               scope:[[search_controller.searchBar scopeButtonTitles] objectAtIndex:search_controller.searchBar.selectedScopeButtonIndex]];
+    NSLog(@"%@",[_filteredResults.sentences description]);
+    return YES;
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption{
+    [self filterContentForSearchText:search_bar.text
+                               scope:[[search_controller.searchBar scopeButtonTitles] objectAtIndex:search_controller.searchBar.selectedScopeButtonIndex]];
+    return YES;
 }
 
 

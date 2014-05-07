@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DisplayMessageViewController : UIViewController<UITableViewDelegate, NSFetchedResultsControllerDelegate, UITableViewDataSource,UISearchBarDelegate>
+@interface DisplayMessageViewController : UIViewController<UITableViewDelegate, NSFetchedResultsControllerDelegate, UITableViewDataSource,UISearchBarDelegate,UISearchDisplayDelegate>
 @property(nonatomic, strong) UITableView *displayDataView;
 @property(nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property(nonatomic, strong) NSManagedObjectContext *managedObjectContext;
